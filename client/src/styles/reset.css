@@ -15,7 +15,6 @@
 
 a, a:link, a:visited  {
     text-decoration: none;
-		color: inherit;
 }
 
 a:hover  {
@@ -55,7 +54,6 @@ address {
 input, textarea, button, select {
 	font-family: inherit;
     font-size: inherit;
-    color: inherit;
     background-color: transparent;
 }
 

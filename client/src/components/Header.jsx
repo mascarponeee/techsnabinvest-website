@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import Logo from "../assets/header-logo.png"
 import '../styles/header.css'
+import { AiOutlineMenu, AiOutlineClose  } from "react-icons/ai"
 
 export default function Header() {
+
+  const [ menu, setMenu ] = useState(false)
+
   return (
     <header className="header">
         <div className="container">
@@ -11,7 +15,7 @@ export default function Header() {
               <img src={Logo} alt="Логотип ООО'ТЕХСНАБИНВЕСТ'" />
             </div>
             <div className="header__nav">
-              <ul className="menu">
+              <ul className={menu ? "menu active" : "menu"}>
                 <li>
                   <a href="#">Автопогрузчики</a>
                 </li>
@@ -31,8 +35,14 @@ export default function Header() {
                   <a href="#">Контакты</a>
                 </li>
               </ul>
+              <div className="header__contacts">
+                <span className="header__phone">8 (423) 275-65-85</span>
+                <a href="##" className="header__btn">ОСТАВИТЬ ЗАЯВКУ</a>
             </div>
-            {/* <div className="header__contacts">CONTACTS</div> */}
+            </div> 
+            <div onClick={() => setMenu(!menu)} className="mobile_btn">
+              {menu ? <AiOutlineClose size={28} color="#ffff"/> : <AiOutlineMenu size={28} />}
+            </div>
           </div>
         </div>
     </header>
