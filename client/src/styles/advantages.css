@@ -1,0 +1,67 @@
+.advantages {
+  background-color: #F4F6FA;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin: 30px 0;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #575756;
+} 
+
+.grid {
+  width: 100%;
+  padding: 0 15px 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-cell {
+  background: #FFFFFF no-repeat right 20px bottom 20px;
+  padding: 20px;
+  font-weight: 600;
+  color: #575756;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.orange {
+  background-color: #ff962d;
+  color: white;
+}
+
+.usl1 {
+  background-image: url(../assets/adv/usl1.svg);
+}
+.usl2 {
+  background-image: url(../assets/adv/usl2.svg);
+}
+.usl3 {
+  background-image: url(../assets/adv/usl3.svg);
+}
+.usl4 {
+  background-image: url(../assets/adv/usl4.svg);
+}
+.usl5 {
+  background-image: url(../assets/adv/usl5.svg);
+}
+.usl6 {
+  background-image: url(../assets/adv/usl6.svg);
+}
+
+@media(max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-cell {
+    background-size: 60px;
+    background-position: right 10px bottom 10px;
+  }
+}
