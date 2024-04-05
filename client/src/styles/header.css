@@ -13,7 +13,7 @@
 
 .header__logo {
   width: 250px;
-  min-width: 180px;
+  min-width: 160px;
   display: flex;
 }
 
@@ -38,6 +38,7 @@
 
 .menu a {
   color: inherit;
+  transition: color 0.2s;
 }
 
 .header__contacts {
@@ -45,6 +46,7 @@
   width: max-content;
   gap: 14px;
   align-items: center;
+  margin-left: 8px;
 }
 
 .header__phone {
@@ -55,9 +57,10 @@
 .header__btn {
   font-weight: 600;
   background-color: #ff962d;
-  padding: 8px 10px;
-  border-radius: 20px;
+  padding: 4px 10px;
+  border-radius: 25px;
   color: white;
+  transition: background-color 0.2s;
 }
 
 .mobile_btn {
@@ -108,21 +111,32 @@
   }
 
   .header__logo {
-    width: 180px;
+    width: 170px;
   }
 
   .header__phone {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   .header__btn {
-    font-weight: 600;
-    background-color: #ff962d;
-    padding: 2px 6px;
+    padding: 0px 6px;
     margin: 0 8px;
-    border-radius: 20px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: white;
   }
 
+}
+
+@media (min-width: 1101px) {
+  .menu a:hover {
+    color: #ed8a28;
+  }
+
+  .header__btn:hover {
+    background-color: #c57526
+  }
+
+  .header__btn:active {
+    background-color: #ff962d
+  }
 }

@@ -36,7 +36,7 @@ export default function Header() {
                 </li>
               </ul>
               <div className="header__contacts">
-                <span className="header__phone">8 (423) 275-65-85</span>
+                <span className="header__phone">8 (499) 343-59-83</span>
                 <a href="##" className="header__btn">ОСТАВИТЬ ЗАЯВКУ</a>
             </div>
             </div> 
