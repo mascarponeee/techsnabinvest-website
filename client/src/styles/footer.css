@@ -1,0 +1,79 @@
+.footer {
+  width: 100%;
+  background-color: #414140;
+}
+
+.footer__wrapper,
+.footer a,
+.footer a[href^="tel:"] {
+  color: rgb(187, 187, 187);
+}
+.footer__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 30px 0;
+  font-size: 0.8rem;
+}
+
+.footer__nav a {
+  transition: color 0.5s;
+}
+
+.left__col,
+.right__col {
+  justify-self: center;
+}
+
+.left__col {
+  line-height: 1.3rem;
+}
+
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  line-height: 1.2rem;
+}
+
+.footer__title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.footer__email {
+  margin-top: 14px;
+}
+
+@media (min-width: 1000px) {
+  .footer__nav a:hover {
+    color: white;
+    text-decoration: underline;
+    transition: color 0.3s;
+  }
+
+  .footer a[href^="tel:"]:hover,
+  .footer a[href^="mailto:"]:hover {
+    color: white;
+    transition: color 0.3s;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__wrapper {
+    font-size: 1rem;
+    flex-direction: column;
+    padding-left: 10px;
+  }
+  
+  .footer__wrapper,
+  .footer a,
+  .footer a[href^="tel:"],
+  .footer a[href^="mailto:"] {
+    color: rgb(227, 227, 227);
+    font-weight: 400;
+  }
+}
