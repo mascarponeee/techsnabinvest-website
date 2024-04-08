@@ -7,7 +7,6 @@ const handleError = (res, error) => {
 const getTrucks = (req, res) => {
   Truck
     .find()
-    .sort({_id: 1})
     .then((trucks) => {
       res
         .status(200)

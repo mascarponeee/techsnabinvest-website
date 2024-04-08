@@ -4,7 +4,7 @@ import '../styles/animatedSlider.css'
 
 export default function AnimatedSlider() {
   return (
-    <div className="container">
+    <section className="container">
       <div className="slider">
         <img src={SliderImg} alt="slider" className="slider__img"/>
         <div className="slider__description">
@@ -15,6 +15,6 @@ export default function AnimatedSlider() {
         </a>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -4,7 +4,7 @@ import '../styles/advantages.css'
 export default function MainContent() {
   return (
     <>
-    <div className="advantages">
+    <section className="advantages bgd-highlight">
       <div className="container">
         <h3 className="title">
           Заказывая погрузочную технику у нас Вы получаете:
@@ -38,7 +38,7 @@ export default function MainContent() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
       
     </>
   )

@@ -7,3 +7,15 @@ body {
   padding: 0 16px;
   margin: 0 auto;
 }
+
+.bgd-highlight {
+  background-color: #F4F6FA;
+}
+
+.title {
+  margin: 30px 0;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #575756;
+} 

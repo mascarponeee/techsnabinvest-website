@@ -1,0 +1,50 @@
+.clients {
+
+}
+
+.clients__box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.clients__box li {
+  display: inline-block;
+  text-align: center;
+}
+
+.clients .title {
+  font-size: 2rem;
+}
+
+@media (min-width: 1000px) {
+  .clients__box img {
+    transition: transform 0.3s linear;
+  }
+
+  .clients__box img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s linear;
+  }
+}
+
+@media (max-width: 999px) {
+  .clients__box li {
+    width: 32%;
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .clients__box li {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  .clients__box li {
+    width: 100%;
+  }
+}

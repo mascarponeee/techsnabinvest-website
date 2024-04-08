@@ -9,9 +9,8 @@ import requestsRoutes from './routes/requestsRoute.js';
 const app = express();
 // автоматический парсинг json
 app.use(express.json());
-
-app.use(express.json());
 app.use(cors());
+app.use(trucksRoutes);
 app.use(requestsRoutes);
 
 mongoose
@@ -23,6 +22,6 @@ app.listen(PORT, (err) => {
   err ? console.log(err) : console.log(`Listening to port ${PORT}`);
 });
 
-app.get('/', (req, res) => {
-  res.send(`<h1>This is server</h1>`)
-});
+// app.get('/', (req, res) => {
+//   res.send(`<h1>This is server</h1>`)
+// });
