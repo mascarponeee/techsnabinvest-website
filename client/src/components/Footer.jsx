@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 import React, { useState } from "react"
 import '../styles/footer.css'
 
@@ -11,25 +13,25 @@ export default function Footer() {
             <div className="footer__nav">
               <ul>
                 <li>
-                  <a href="#">Главная</a>
+                  <NavLink to="/">Главная</NavLink>
                 </li>
                 <li>
-                  <a href="#">Автопогрузчики</a>
+                  <NavLink to="/catalog">Автопогрузчики</NavLink>
                 </li>
                 <li>
-                <a href="#">Запчасти</a>
+                  <NavLink to="/parts">Запчасти</NavLink>
                 </li>
                 <li>
-                <a href="#">Ремонт</a>
+                  <NavLink to="/repair">Ремонт</NavLink>
                 </li>
                 <li>
-                <a href="#">Доставка</a>
+                  <NavLink to="/delivery">Доставка</NavLink>
                 </li>
                 <li>
-                <a href="#">О нас</a>
+                  <NavLink to="/about">О нас</NavLink>
                 </li>
                 <li>
-                  <a href="#">Контакты</a>
+                  <NavLink to="/contacts">Контакты</NavLink>
                 </li>
               </ul>
             </div>
