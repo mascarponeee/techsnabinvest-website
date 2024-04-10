@@ -29,22 +29,22 @@ export default function Header() {
             <div className="header__nav">
               <ul className={menu ? "menu active" : "menu"}>
                 <li>
-                  <NavLink to="/catalog">Автопогрузчики</NavLink>
+                  <NavLink to="/catalog" onClick={() => setMenu(false)}>Автопогрузчики</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/parts">Запчасти</NavLink>
+                  <NavLink to="/parts"onClick={() => setMenu(false)}>Запчасти</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/repair">Ремонт</NavLink>
+                  <NavLink to="/repair"onClick={() => setMenu(false)}>Ремонт</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/delivery">Доставка</NavLink>
+                  <NavLink to="/delivery"onClick={() => setMenu(false)}>Доставка</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/about">О нас</NavLink>
+                  <NavLink to="/about"onClick={() => setMenu(false)}>О нас</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contacts">Контакты</NavLink>
+                  <NavLink to="/contacts"onClick={() => setMenu(false)}>Контакты</NavLink>
                 </li>
               </ul>
               <div className="header__contacts">
