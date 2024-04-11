@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 50px;
+  padding: 20px 0 40px;
+}
+
+.catalog {
+  padding: 10px 0;
+}
+
+.catalog__title {
+  margin: 0;
+  text-align: left;
+}
