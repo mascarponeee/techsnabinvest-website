@@ -18,8 +18,14 @@ const truckSchema = new Schema({
   liftingCapacity: Number,
   liftingHeight: [Number],
   engine: {
-    type: String,
-    model: String
+    type: {
+      type: String,
+      required: true
+    },
+    model: {
+      type: String,
+      required: true
+    }
   },
   description: {
     type: String,
@@ -32,7 +38,10 @@ const truckSchema = new Schema({
     heating: Boolean
   },
   transmission: {
-    type: String,
+    type: {
+      type: String,
+      required: false,
+    },
     speeds: Number
   },
   tires: {
@@ -75,6 +84,7 @@ const truckSchema = new Schema({
     type: Boolean,
     required: true,
   },
+  booklet: String,
 });
 const Truck = mongoose.model("Truck", truckSchema);
 export default  Truck;
