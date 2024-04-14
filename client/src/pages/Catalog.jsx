@@ -6,9 +6,13 @@ function Catalog() {
   const [items, setItems] = useState([])
 
   const fetchItems = async () => {
-    await fetch('http://localhost:5000/trucks')
-      .then(res => res.json())
-      .then(data => {setItems(data)})
+    try {
+      const response = await fetch('http://localhost:5000/trucks');
+      const data = await response.json();
+      setItems(data);
+    } catch (error) {
+      console.error('Ошибка при загрузке данных:', error);
+    }
   }
 
   useEffect(() => {
@@ -16,14 +20,18 @@ function Catalog() {
   }, [])
 
   return (
-    <div className="catalog bgd-highlight">
-      <div className="container">
-        <h1 className="catalog__title ">Автопогрузчики</h1>
-        <div className="wrapper">
-          {items.map((item, index) => {
-            {console.log(item)}
-            return <Item key={index} item={item}/>
-          })}
+    <div className="catalog">
+      <div className='catalog_top container'>
+        <h1>Автопогрузчики</h1>
+      </div>
+      <div className='catalog_main bgd-highlight'>
+        <div className="container">
+          <div className="wrapper">
+            {items.map((item, index) => {
+              {console.log(item)}
+              return <Item key={item._id} item={item}/>
+            })}
+          </div>
         </div>
       </div>
     </div>

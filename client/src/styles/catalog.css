@@ -1,16 +1,25 @@
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   row-gap: 50px;
   padding: 20px 0 40px;
-}
-
-.catalog {
-  padding: 10px 0;
 }
 
 .catalog__title {
   margin: 0;
   text-align: left;
+}
+
+.catalog_top h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 30px 0;
+  color: #e68525;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    justify-content: center;
+  }
 }
