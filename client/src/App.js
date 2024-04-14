@@ -10,6 +10,7 @@ import Repair from "./pages/Repair"
 import Delivery from "./pages/Delivery"
 import About from "./pages/About"
 import Contacts from "./pages/Contacts"
+import Truck from "./pages/Truck"
 
 import ScrollToTop from "./utils/scrollToTop"
 
@@ -22,6 +23,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/catalog/:id" element={<Truck />} />
           <Route path="/parts" element={<Parts />} />
           <Route path="/repair" element={<Repair />} />
           <Route path="/delivery" element={<Delivery />} />
