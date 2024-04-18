@@ -26,6 +26,24 @@ function Truck() {
 
   console.log(truck)
 
+  const openBookletInNewTab = async () => {
+    if (!id) {
+        console.error('Идентификатор товара отсутствует');
+        return;
+    }
+
+    try {
+        // Формируем URL для запроса буклета
+        const url = `http://localhost:5000/api/booklet/${id}`;
+        // Открываем URL в новой вкладке
+        window.open(url, '_blank');
+    } catch (error) {
+        // Обрабатываем ошибки при запросе к серверу
+        console.error('Ошибка при открытии буклета:', error);
+    }
+  };
+
+
   return (
     <div className="Truck">
       <div className='container'>
@@ -41,26 +59,44 @@ function Truck() {
           )}
           </div>
           <div className='truck_details'>
+
             <table>
               <tr>
                 <td>Грузоподъемность, кг</td>
-                <td>{truck.liftingCapacity} кг</td>
+                <td>{truck.liftingCapacity}</td>
               </tr>
               <tr>
                 <td>Высота подъема вил, мм</td>
                 {truck && truck.liftingHeight && truck.liftingHeight[0] && (
                 <td>{truck.liftingHeight[0]} ({truck.liftingHeight[1]})</td>
                  )}
-                
               </tr>
               <tr>
                 <td>Двигатель</td>
                 {truck && truck.engine && truck.engine.model && (
                 <td>{truck.engine.model}</td>
                  )}
-                
+              </tr>
+              <tr>
+                <td>Коробка передач</td>
+                {truck && truck.transmission && truck.transmission.type && (
+                <td>{truck.transmission.type}</td>
+              )}
+              </tr>
+              <tr>
+                <td>Максимальная скорость, км/ч</td>
+                <td>{truck.maximumSpeed}</td>
+              </tr>
+              <tr>
+                <td>Масса снаряженного автопогрузчика, кг</td>
+                <td>{truck.weight}</td>
               </tr>
             </table>
+
+            <div className="links">
+              <a href="" onClick={() => openBookletInNewTab()} className='download'  target="_self">Скачать брошюру</a>
+              <a href="#" className='request_btn'>Оставить заявку</a>
+            </div>
           </div>
         </div>
         </div>
