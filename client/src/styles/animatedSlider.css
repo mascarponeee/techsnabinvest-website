@@ -47,6 +47,6 @@
   font-size: 1rem;
   border-radius: 30px;
   color: white;
-  background-color: #ff962d;
+  background-color: var(--main-color);
   width: fit-content;
 }

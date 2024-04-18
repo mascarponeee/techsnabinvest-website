@@ -60,7 +60,7 @@ a[href^="tel:"] {
 
 .header__btn {
   font-weight: 600;
-  background-color: #ff962d;
+  background-color: var(--main-color);
   padding: 4px 10px;
   border-radius: 25px;
   color: white;
@@ -94,7 +94,7 @@ a[href^="tel:"] {
     bottom: 0;
     width: 300px;
     height: 100vh;
-    background-color: #ff962d;
+    background-color: var(--main-color);
     z-index: 10;
     color: white;
     transition: left 1s;
@@ -141,6 +141,6 @@ a[href^="tel:"] {
   }
 
   .header__btn:active {
-    background-color: #ff962d
+    background-color: var(--main-color)
   }
 }

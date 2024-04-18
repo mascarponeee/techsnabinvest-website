@@ -1,6 +1,6 @@
 .truck_title {
   margin: 20px 0;
-  color: #575756;
+  color: #000000;
   font-weight: 600;
   font-size: 1.5rem;
 }
@@ -17,6 +17,7 @@
   width: 40%;
   background-color: white;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .truck_img img {
@@ -30,7 +31,7 @@
   width: 60%;
 }
 
-.truck_details table {
+table {
   table-layout: fixed;
   width: 90%;
   margin-inline: auto;
@@ -38,21 +39,21 @@
   color: #505050;
 }
 
-.truck_details td {
+td {
   border: 1px solid #cecece;
   padding: 10px;
 }
 
-.truck_details tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: rgb(252, 252, 252);
 }
 
-.truck_details tr:nth-child(odd) {
+tr:nth-child(odd) {
   background-color: #f4f5f5;
 }
 
-.truck_details td:nth-child(even) {
-  width: 40%
+td:nth-child(even) {
+  width: 35%
 }
 
 .links {
@@ -74,11 +75,25 @@
 
 .request_btn {
   font-weight: 500;
-  background-color: #ff962d;
+  background-color: var(--main-color);
   padding: 4px 14px;
   border-radius: 25px;
   color: white;
   transition: background-color 0.2s;
+}
+
+
+.features {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.features h2 {
+  margin: 40px auto;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #575756;
 }
 
 @media (max-width: 767px) {
@@ -93,6 +108,10 @@
   .truck_img,
   .truck_details {
     width: 90%;
+  }
+  
+  .truck_details {
+    padding: 0;
   }
 
   .truck_img img,
@@ -111,5 +130,11 @@
 
   .links {
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 580px) { 
+  .features h2 {
+    font-size: 2rem;
   }
 }

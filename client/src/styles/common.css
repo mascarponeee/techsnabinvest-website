@@ -1,3 +1,7 @@
+:root {
+  --main-color: #ff962d;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
