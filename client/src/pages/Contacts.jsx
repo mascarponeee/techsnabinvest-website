@@ -1,9 +1,11 @@
-import Clients from "../components/Clients"
+import ModalRequest from "../components/ModalRequest";
+
 
 function Contacts() {
   return (
     <div className="Contacts">
-      <h1>Contacts</h1>
+      <h1 className="page_title">Contacts</h1>
+      <ModalRequest />
     </div>
   );
 }

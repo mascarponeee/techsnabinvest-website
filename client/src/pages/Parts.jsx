@@ -3,7 +3,7 @@ import Clients from "../components/Clients"
 function Parts() {
   return (
     <div className="Parts">
-      <h1>Parts</h1>
+      <h1 className="page_title">Parts</h1>
     </div>
   );
 }

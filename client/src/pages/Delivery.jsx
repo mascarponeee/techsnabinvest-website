@@ -3,7 +3,7 @@ import Clients from "../components/Clients"
 function Delivery() {
   return (
     <div className="Delivery">
-      <h1>Delivery</h1>
+      <h1 className="page_title">Delivery</h1>
     </div>
   );
 }

@@ -22,7 +22,7 @@ function Catalog() {
   return (
     <div className="catalog">
       <div className='catalog_top container'>
-        <h1>Автопогрузчики</h1>
+        <h1 className='page_title'>Автопогрузчики</h1>
       </div>
       <div className='catalog_main bgd-highlight'>
         <div className="container">
