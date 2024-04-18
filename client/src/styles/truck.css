@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 .truck_title {
   margin: 20px 0;
   color: #000000;
@@ -53,7 +58,8 @@ tr:nth-child(odd) {
 }
 
 td:nth-child(even) {
-  width: 35%
+  width: 35%;
+  word-break: break-word;
 }
 
 .links {
@@ -88,13 +94,35 @@ td:nth-child(even) {
   margin: 0 auto;
 }
 
-.features h2 {
+.section_title {
   margin: 40px auto;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
   color: #575756;
 }
+
+.block_yak {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 20px;
+  font-size: 1.125rem;
+  background-color: #d2d3d5;
+}
+
+.block_yak a, 
+.block_yak a:visited {
+  color: #666665;
+  font-weight: 500;
+}
+
+@media (hover: hover) {
+  .block_yak a:hover {
+    color: var(--main-color);
+  }
+}
+
 
 @media (max-width: 767px) {
   .truck_preview,
@@ -115,11 +143,11 @@ td:nth-child(even) {
   }
 
   .truck_img img,
-  .truck_details table {
+  table {
     width: 100%;
   }
 
-  .truck_details table {
+  table {
     font-size: 0.8rem;
   }
 
@@ -136,5 +164,13 @@ td:nth-child(even) {
 @media (max-width: 580px) { 
   .features h2 {
     font-size: 2rem;
+  }
+
+  .block_yak {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    font-size: 1rem;
+
   }
 }
