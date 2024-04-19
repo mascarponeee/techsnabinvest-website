@@ -1,7 +1,9 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import React, { useState } from "react";
 
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import ModalRequest from "./components/ModalRequest";
 
 import Home from "./pages/Home"
 import Catalog from "./pages/Catalog"
@@ -13,9 +15,14 @@ import Contacts from "./pages/Contacts"
 import Truck from "./pages/Truck"
 
 import ScrollToTop from "./utils/scrollToTop"
+import { ModalContext } from "./utils/OpenModal"
+
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
+    <ModalContext.Provider value={[modalOpen, setModalOpen]}>
     <div className="App">
       <Router>
         <ScrollToTop />
@@ -30,9 +37,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
 				</Routes>
+        {modalOpen && <ModalRequest setOpenModal={setModalOpen} />}
 				<Footer />
 			</Router>
     </div>
+    </ModalContext.Provider>
   );
 }
 
