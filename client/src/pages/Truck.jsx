@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import "../styles/truck.css"
+import {ModalContext} from "../utils/OpenModal"
 
 function Truck() {
 
@@ -8,6 +9,7 @@ function Truck() {
   console.log(id)
   const [truck, setTruck] = useState({})
   const [loading, setLoading] = useState(true);
+  const [modalOpen, setModalOpen] = useContext(ModalContext);
 
   useEffect(() => {
     const fetchTruck = async () => {
@@ -111,7 +113,9 @@ function Truck() {
 
             <div className="links">
               <a href="" onClick={() => openBookletInNewTab()} className='download'  target="_self">Скачать брошюру</a>
-              <a href="#" className='request_btn'>Оставить заявку</a>
+              <a href="#" className='request_btn' onClick={() => {
+                  setModalOpen(true);
+                }}>Оставить заявку</a>
             </div>
           </div>
         </section>
