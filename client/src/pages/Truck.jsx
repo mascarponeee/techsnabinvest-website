@@ -50,7 +50,7 @@ function Truck() {
   if (loading) {
     return (
       <div>
-        <p>Загрузка данных...</p>
+        <p></p>
       </div>
     );
   }
@@ -270,9 +270,33 @@ function Truck() {
         </section>
       </div>
 
-      <section className='description'>
-        <h2 id='description' className='section_title'>ОПИСАНИЕ</h2>
-      </section>
+      <div className='bgd-highlight'>
+        <div className="container">
+          <section className='description'>
+            <h2 id='description' className='section_title'>ОПИСАНИЕ</h2>
+            {truck && truck.description && (
+              <p className='description_main'>{truck.description}</p> 
+            )}
+            <h3>Особенности данной модели</h3>
+            {truck && truck.features && (
+              <ul>
+                {truck.features.map((feature) => {
+                  return <li>{feature}</li>
+                })}
+              </ul>
+            )}
+
+            <h3>Комплекты навесного оборудования</h3>
+            {truck && truck.attachments && (
+              <ul>
+                {truck.attachments.map((attachment) => {
+                  return <li>{attachment}</li>
+                })}
+              </ul>
+            )}
+          </section>
+        </div>
+      </div>
           
     </div>
   );
