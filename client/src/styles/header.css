@@ -61,8 +61,8 @@ a[href^="tel:"] {
 .header__btn {
   font-weight: 600;
   background-color: var(--main-color);
-  padding: 4px 10px;
-  border-radius: 25px;
+  padding: 4px 14px;
+  border-radius: 30px;
   color: white;
   transition: background-color 0.2s;
 }
@@ -131,7 +131,7 @@ a[href^="tel:"] {
 
 }
 
-@media (min-width: 1101px) {
+@media (hover: hover) {
   .menu a:hover {
     color: #ed8a28;
   }

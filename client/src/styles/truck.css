@@ -4,10 +4,10 @@ html {
 
 
 .truck_title {
-  margin: 20px 0;
+  padding: 30px 0;
   color: #000000;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 .truck_preview {
@@ -82,8 +82,8 @@ td:nth-child(even) {
 .request_btn {
   font-weight: 500;
   background-color: var(--main-color);
-  padding: 4px 14px;
-  border-radius: 25px;
+  padding: 6px 14px;
+  border-radius: 30px;
   color: white;
   transition: background-color 0.2s;
 }
@@ -92,10 +92,11 @@ td:nth-child(even) {
 .features {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 40px;
 }
 
 .section_title {
-  margin: 40px auto;
+  padding: 50px 0;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
@@ -117,9 +118,37 @@ td:nth-child(even) {
   font-weight: 500;
 }
 
+.description_main {
+  text-indent: 30px;
+  padding: 0 10px;
+}
+
+.description h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #575756;
+  margin: 30px 0 10px;
+}
+
+.description ul {
+  margin-left: 40px;
+  list-style-type: circle;
+  line-height: 1.75rem;
+}
+
+
+
 @media (hover: hover) {
   .block_yak a:hover {
     color: var(--main-color);
+  }
+
+  .request_btn:hover {
+    background-color: #c57526
+  }
+
+  .request_btn:active {
+    background-color: var(--main-color)
   }
 }
 
