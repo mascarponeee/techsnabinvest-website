@@ -23,7 +23,7 @@ const requestSchema = new Schema({
     type: String,
     required: true
   },
-  product: String
+  comment: String
 });
 
 const Request = mongoose.model("Request", requestSchema)
