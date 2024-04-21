@@ -1,9 +1,14 @@
-import Clients from "../components/Clients"
+import AnimatedSlider from "../components/AnimatedSlider"
+import Advantages from "../components/Advantages"
 
 function Repair() {
   return (
     <div className="Repair">
-      <h1 className="page_title">Repair</h1>
+      <div className='container'>
+        <h1 className="page_title">Ремонт</h1>
+      </div>
+      <AnimatedSlider />
+      <Advantages />
     </div>
   );
 }
