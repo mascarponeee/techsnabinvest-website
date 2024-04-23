@@ -23,6 +23,7 @@ const addRequest = (req, res) => {
   .then((result) => {
     res
       .status(201)
+      .setHeader("Access-Control-Allow-Origin", "*")
       .json(result)
   })
   .catch((err) => handleError(res, err))
