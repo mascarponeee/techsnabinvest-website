@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styles/modal_request.css'
 import { AiOutlineClose  } from "react-icons/ai"
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 export default function ModalRequest( {setOpenModal} ) {
 
@@ -11,11 +12,11 @@ export default function ModalRequest( {setOpenModal} ) {
   const [nameError, setNameError] = useState(false)
   const [phoneError, setPhoneError] = useState(false)
   const [formValid, setFormValid] = useState(false)
+  const [dataSent, setDataSent] = useState(false)
 
   useEffect(() => {
     if (nameError || phoneError) {
       setFormValid(false)
-      console.log()
     } else 
       setFormValid(true)
   }, [nameError, phoneError])
@@ -36,7 +37,7 @@ export default function ModalRequest( {setOpenModal} ) {
     try {
       const response = await fetch('http://localhost:5000/requests', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(dataForm)
       });
   
@@ -45,9 +46,9 @@ export default function ModalRequest( {setOpenModal} ) {
       }
   
       const data = await response.json();
-      // Обработка успешного ответа от сервера
+      console.log(data)
+      setDataSent(true)
     } catch (error) {
-      // Обработка ошибки
       console.error('Ошибка при отправке данных:', error);
     }
   }
@@ -63,7 +64,7 @@ export default function ModalRequest( {setOpenModal} ) {
 
   const phoneHandler = (e) => {
     setPhone(e.target.value)
-    const phoneRegex = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/
+    const phoneRegex = /^(\+7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/
     if (!phoneRegex.test(e.target.value))
       setPhoneError(true)
     else
@@ -98,50 +99,63 @@ export default function ModalRequest( {setOpenModal} ) {
           }} 
         />
         </div>
-        <h1 className="modal_title title">Оставить заявку</h1>
-
-        <form onSubmit={submitForm} action="" method='post' className='form-request'>
-
-          <div className={nameDirty && nameError ? "form-group error" : "form-group"}>
-            <input 
-              onBlur={blurHandler} 
-              onChange={nameHandler}
-              value={name} 
-              type="text" 
-              name='name'
-              placeholder='Ваше имя*' 
-              required />
-            {(nameDirty && nameError) && <p className='text-danger'>Имя должно быть от 2 до 32 букв</p>}
+        {dataSent ?  (
+          <div className="sent-inform">
+            <IoIosCheckmarkCircleOutline size={80} color='green' style={{
+              'margin-bottom': '10px'
+            }}/>
+            <h1>Ваша заявка принята!</h1>
+            <p>Мы свяжемся с вами в ближайшее время</p>
           </div>
+        ) : (
+          <div>
+            <h1 className="modal_title title">Оставить заявку</h1>
 
-          <div className={phoneDirty && phoneError ? "form-group error" : "form-group"}>
-            <input 
-              onBlur={blurHandler} 
-              onChange={phoneHandler}
-              value={phone} 
-              type="text" 
-              name='phone' 
-              placeholder='Ваш телефон*' 
-              required />
-            {(phoneDirty && phoneError) && <p className='text-danger'>Введите корректный номер телефона</p>}
-            
+            <form onSubmit={submitForm} action="" method='post' className='form-request'>
+
+              <div className={nameDirty && nameError ? "form-group error" : "form-group"}>
+                <input 
+                  onBlur={blurHandler} 
+                  onChange={nameHandler}
+                  value={name} 
+                  type="text" 
+                  name='name'
+                  placeholder='Ваше имя*' 
+                  required />
+                {(nameDirty && nameError) && <p className='text-danger'>Имя должно быть от 2 до 32 букв</p>}
+              </div>
+
+              <div className={phoneDirty && phoneError ? "form-group error" : "form-group"}>
+                <input 
+                  onBlur={blurHandler} 
+                  onChange={phoneHandler}
+                  value={phone} 
+                  type="text" 
+                  name='phone' 
+                  placeholder='Ваш телефон*' 
+                  required />
+                {(phoneDirty && phoneError) && <p className='text-danger'>Введите корректный номер телефона</p>}
+                
+              </div>
+
+              <input type="text" name='email' placeholder='Ваш email' />
+              <textarea name='comment' className='comment' rows="3" placeholder='Комментарий' />
+              <p className='form-note'>
+                <span style={{
+                  color: "red"
+                }}>*</span>
+                &nbsp;-  обязательно для заполнения</p>
+              <p className='policy'>Нажимая на кнопку "Отправить", я даю согласие на обработку Персональных данных</p>
+              <input 
+                disabled={!formValid}
+                type="submit" 
+                name="" 
+                id="" 
+                value="Отправить" />
+            </form>
           </div>
-
-          <input type="text" name='email' placeholder='Ваш email' />
-          <textarea name='comment' className='comment' rows="3" placeholder='Комментарий' />
-          <p className='form-note'>
-            <span style={{
-              color: "red"
-            }}>*</span>
-            &nbsp;-  обязательно для заполнения</p>
-          <p className='policy'>Нажимая на кнопку "Отправить", я даю согласие на обработку Персональных данных</p>
-          <input 
-            disabled={!formValid}
-            type="submit" 
-            name="" 
-            id="" 
-            value="Отправить" />
-        </form>
+      )}
+        
 
       </div>
     </div>
