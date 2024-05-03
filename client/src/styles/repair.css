@@ -1,0 +1,33 @@
+.repair-info,
+.repair-request {
+  padding: 50px 10px;
+}
+
+.repair-info p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-indent: 30px;
+  color: #575756;
+  text-align: justify;
+}
+
+.repair-info p:last-child {
+  margin-bottom: 0;
+} 
+
+.repair-request .modalContainer {
+  margin: 0 auto;
+  padding: 0;
+  background-color: inherit;
+}
+
+@media (max-width: 600px) {
+
+  .repair-info p {
+    font-size: 1rem;
+  }
+
+  .repair-request .modalContainer {
+    width: 100%;
+  }
+}
