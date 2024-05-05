@@ -19,6 +19,10 @@ const requestSchema = new Schema({
     type: String,
     required: true
   },
+  category: {
+    type: String,
+    enum: ['погрузчики', 'запчасти', 'ремонт', 'другое']
+  },
   phone: {
     type: String,
     required: true
