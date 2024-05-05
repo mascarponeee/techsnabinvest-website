@@ -35,18 +35,23 @@ function Truck() {
 
   console.log(truck)
 
-  const openBookletInNewTab = async () => {
-    if (!id) {
-        console.error('Идентификатор товара отсутствует');
-        return;
-    }
+  const openBookletInNewTab = async () => {    
+    const url = `http://localhost:5000/api/booklet/${id}`;
 
-    try {
-        const url = `http://localhost:5000/api/booklet/${id}`;
-        window.open(url, '_blank');
-    } catch (error) {
-        console.error('Ошибка при открытии буклета:', error);
-    }
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Ошибка при загрузке буклета');
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        window.open(url);
+      })
+      .catch(error => {
+        alert('Ошибка при загрузке буклета');
+      });
   };
 
   if (loading) {
