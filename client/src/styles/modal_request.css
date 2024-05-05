@@ -71,7 +71,8 @@
 }
 
 .form-request [type="text"],
-.form-request .comment {
+.form-request .comment,
+.form-request select {
   border-radius: 10px;
   background-color: #ffffff;
   color: #555;
@@ -83,6 +84,14 @@
   display: block;
   line-height: 2.2rem;
 }
+
+.form-request select {
+  padding: 10px 12px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+}
+
 
 .form-request .comment {
   resize: none;
