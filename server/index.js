@@ -46,3 +46,14 @@ app.get('/api/booklet/:id', (req, res) => {
       }
   });
 });
+
+app.get('/api/parts/catalog', (req, res) => {
+  const catalogPath = path.join(__dirname, 'api', 'parts', `catalog.pdf`);
+
+  res.sendFile(catalogPath, (err) => {
+      if (err) {
+          console.error('Ошибка при отправке файла:', err);
+          res.status(404).send('Прайс-лист не найден');
+      }
+  });
+});
