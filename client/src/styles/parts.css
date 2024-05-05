@@ -1,0 +1,113 @@
+.parts-info,
+.parts-request {
+  padding: 50px 10px;
+}
+
+.parts-info p,
+.parts-info ul {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5rem;
+}
+
+.parts-info p {
+  text-indent: 30px;
+  color: #575756;
+  text-align: justify;
+  
+}
+
+.parts-info p:last-child {
+  margin-bottom: 0;
+} 
+
+.parts-info ul {
+  margin-left: 30px;
+  color: #575756;
+}
+
+.parts-info li:not(:last-child) { 
+  margin-bottom: 8px;  
+}
+
+.parts-info .download {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.parts-instruction .title {
+  padding: 30px 0;
+}
+
+.parts-request .modalContainer {
+  margin: 0 auto;
+  padding: 0;
+  background-color: inherit;
+}
+
+.steps-flex {
+  display: flex;
+  width: 100%;
+  margin: 50px 0;
+}
+
+.step-block {
+  width: 33.33333333%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.step-block::before {
+  content: url('../assets/arrow-right.svg');
+  position: absolute;
+  left: -15%;
+  top: 5%; 
+  height:100%; 
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: var(--main-color);
+}
+
+.step-text {
+  color:#575756;
+  margin: 30px 0;
+}
+
+@media (max-width: 880px) {
+  .steps-flex {
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+    margin: 50px 0;
+  }
+  .step-block {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .parts-info p,
+  .parts-info ul,
+  .step-block {
+    font-size: 1rem;
+  }
+
+  .parts-request .modalContainer,
+  .step-block {
+    width: 100%;
+  }
+}
