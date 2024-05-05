@@ -284,8 +284,8 @@ function Truck() {
             <h3>Особенности данной модели</h3>
             {truck && truck.features && (
               <ul>
-                {truck.features.map((feature) => {
-                  return <li>{feature}</li>
+                {truck.features.map((feature, index) => {
+                  return <li key={index}>{feature}</li>
                 })}
               </ul>
             )}
@@ -293,8 +293,8 @@ function Truck() {
             <h3>Комплекты навесного оборудования</h3>
             {truck && truck.attachments && (
               <ul>
-                {truck.attachments.map((attachment) => {
-                  return <li>{attachment}</li>
+                {truck.attachments.map((attachment, index) => {
+                  return <li  key={index}>{attachment}</li>
                 })}
               </ul>
             )}

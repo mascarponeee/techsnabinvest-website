@@ -2,9 +2,9 @@ import Clients from "../components/Clients"
 
 function Parts() {
   return (
-    <div className="Parts">
-      <h1 className="page_title">Parts</h1>
-    </div>
+    <div className='container'>
+        <h1 className="page_title">Запчасти</h1>
+      </div>
   );
 }
 

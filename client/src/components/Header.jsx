@@ -43,7 +43,7 @@ export default function Header() {
                 <a href="tel:+74993435983" className="header__phone">
                   8 (499) 343-59-83
                 </a>
-                <a href="##" className="header__btn" onClick={() => {
+                <a href="#" className="header__btn" onClick={() => {
                   setModalOpen(true);
                 }}>ОСТАВИТЬ ЗАЯВКУ</a>
             </div>

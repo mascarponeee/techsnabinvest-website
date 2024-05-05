@@ -17,18 +17,19 @@
 .contacts-info-block-header {
   display: flex;
   justify-content: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   gap: 6px;
 }
 
 .contacts-info-block-header h3 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .contacts-info-block-body {
   font-weight: 500;
   font-size: 0.9rem;
+  padding-left: 10px;
 }
 
 .contact-icon {

@@ -3,7 +3,9 @@ import Clients from "../components/Clients"
 function About() {
   return (
     <div className="About">
-      <h1 className="page_title">About</h1>
+      <div className='container'>
+        <h1 className="page_title">О нас</h1>
+      </div>
     </div>
   );
 }
