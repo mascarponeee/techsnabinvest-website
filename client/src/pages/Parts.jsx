@@ -1,5 +1,6 @@
 import Form from "../components/Form"
-import AnimatedSlider from "../components/AnimatedSlider"
+import Banner from "../components/Banner"
+import BannerIMG from "../assets/parts/banner_parts.jpg"
 import '../styles/parts.css'
 
 function Parts() {
@@ -27,7 +28,11 @@ function Parts() {
       <div className='container'>
         <h1 className="page_title">Запчасти</h1>
       </div>
-      <AnimatedSlider />
+      <Banner 
+        img = {{ path: BannerIMG}}
+        description = "Заказ сделать очень просто"
+        body = "Просто следуйте инструкции ниже"
+         />
       <div className="bgd-highlight">
         <div className="container">
           <section className="parts-info">

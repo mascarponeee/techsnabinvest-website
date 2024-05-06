@@ -1,7 +1,8 @@
-import AnimatedSlider from "../components/AnimatedSlider"
+import Banner from "../components/Banner"
 import Advantages from "../components/Advantages"
 import Form from "../components/Form"
 import '../styles/repair.css'
+import BannerIMG from "../assets/repair/banner_repair.jpg"
 
 
 function Repair() {
@@ -10,7 +11,11 @@ function Repair() {
       <div className='container'>
         <h1 className="page_title">Ремонт</h1>
       </div>
-      <AnimatedSlider />
+      <Banner 
+        img = {{ path: BannerIMG}}
+        description = "Выездной ремонтный сервис"
+        body = "Для ремонта и обслуживания на территории заказчика"
+         />
       <Advantages />
       <div className="container">
         <section className="repair-info">
