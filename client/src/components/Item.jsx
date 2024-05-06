@@ -6,7 +6,7 @@ function Item({item}) {
     <div className="item">
       <div className="item__img">
         <Link to={`/catalog/${item._id}`}>
-        <img src={require("../assets/catalog/images/lza-40810-kh3-3.jpg")} alt="Фотография погрузчика" />
+        <img src={require("../assets/" + item.imagePath[0])} alt="Фотография погрузчика" />
         </Link>
       </div>
       <Link to={`/catalog/${item._id}`} className="item__name">{item.name}</Link>
